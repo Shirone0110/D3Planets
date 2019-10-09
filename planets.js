@@ -27,6 +27,7 @@ planetPromise.then
         namePlanet(planetData);
         emptyTable(planetData);
         oneColumnTable(planetData);
+        ColumnsTable(planetData);
     },
     function(err)
     {
@@ -70,15 +71,44 @@ var emptyTable = function(planetData)
 
 var oneColumnTable = function(planetData)
 {
-    d3.select("#C2")
-        .append("table")
-        .append("tr")
-        .selectAll("td")
-        .data(planetData)
-        .enter()
-        .append("td")
+    var row = d3.select("#C2")
+                .append("table")
+                .selectAll("tr")
+                .data(planetData)
+                .enter()
+                .append("tr")
+    
+    row.append("td")
         .text(function(d){return d.name;})
 }
 
-
+var ColumnsTable = function(planetData)
+{
+    var row = d3.select("#C3")
+                .append("table")
+                .selectAll("tr")
+                .data(planetData)
+                .enter()
+                .append("tr")
+    
+    row.append("td")
+        .text(function(d){return d.name;})
+    
+    row.append("td")
+        .append("img")
+        .attr("src", function(d)
+             {return d.img;})
+    
+    row.append("td")
+        .text(function(d) {return d.distance;})
+    
+    row.append("td")
+        .text(function(d) {return d.radius;})
+    
+    row.append("td")
+        .text(function(d) {return d.density;})
+    
+    row.append("td")
+        .text(function(d) {return d.moons;})
+}
  
