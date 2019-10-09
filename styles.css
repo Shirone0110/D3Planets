@@ -1,0 +1,35 @@
+body
+{
+    font-size: 20px;
+    background-color: #e6b3ff;
+}
+
+h1
+{
+    font-size: 32px;
+}
+
+div
+{
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ccebff;
+}
+
+th, td
+{
+    border: 1px solid red;
+    padding: 10px;
+}
+
+table
+{
+    margin: auto;
+}
+
+img
+{
+    margin: 10px;
+}
